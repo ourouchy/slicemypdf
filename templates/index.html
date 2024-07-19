@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Slicer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="top-bar"><h1 class="gradient-text">PDF Slicer</h1>
+        <p>Personal website to cut PDF's.<br>By transforming lengthy documents into concise, targeted sections, the service ensures that Large Language Models (ChatGPT, Claude, ...) perform more effectively with streamlined content rather than 200-page PDFs.</p>
+        </div>
+        <form id="pdf-form" action="/slice" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group page-input">
+                    <label for="start_page">Start Page:</label>
+                    <input type="number" name="start_page" id="start_page" required>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="remove-file-button">Remove File</button>
+                </div>
+                <div class="form-group page-input">
+                    <label for="end_page">End Page:</label>
+                    <input type="number" name="end_page" id="end_page" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="file" class="drop-container" id="dropcontainer">
+                    <span class="drop-title">Drop PDF</span>
+                    or
+                    <input type="file" name="file" id="file" required>
+                </label>
+            </div>
+            <div id="pdf-preview" class="hidden">
+                <div id="page-slider">
+                    <!-- Thumbnails of PDF pages will be appended here -->
+                </div>
+            </div>
+            
+            <div class="button-submit">
+                
+                <button type="submit" id="slice-pdf-button" class="button-9">Slice PDF</button>
+            </div>
+        </form>
+        
+        <!-- New form for extraction -->
+        <form id="extract-form" action="/extract" method="post" enctype="multipart/form-data">
+            <button type="button" id="extract-start-page-button" class="hidden">Extract Start Page</button>
+            <button type="button" id="extract-end-page-button" class="hidden">Extract End Page</button>
+        </form>
+        
+        <div id="selected-pages">
+            <canvas id="start-page-canvas"></canvas>
+            <canvas id="end-page-canvas"></canvas>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>

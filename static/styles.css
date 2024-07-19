@@ -1,0 +1,301 @@
+/* styles.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #151515;
+
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  padding: 20px;
+}
+
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 7em;
+  color: #A91D3A;
+ 
+}
+
+button {
+  display: inline-block;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 30px;
+  background-color: #A91D3A;
+  color: white;
+  padding: 0 20px;
+  
+  
+
+}
+
+
+form {
+  width: 100%;
+}
+p {
+  color: white ;
+}
+.top-bar{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.top-bar p{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+#remove-file-button, #slice-pdf-button {
+  display: none;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  color: white;
+}
+
+.button-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.button-submit button {
+  width: 150px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group input[type="file"],
+.form-group input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-row .form-group:last-child {
+  margin-right: 0;
+}
+
+.drop-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 200px;
+  width: 80%;
+  padding: 20px;
+  border: 4px dashed white;
+  color: #222245;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+  background-color: #A91D3A;
+}
+
+.drop-container:hover span{
+  color: white;
+}
+.drop-container:hover input{
+  color: white;
+}
+
+.drop-title {
+  color: #A91D3A;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type=file] {
+  width: 350px;
+  max-width: 100%;
+  color: #222245;
+  padding: 8px;
+  background-color: #A91D3A;
+  border: 1px solid ;
+  border-radius: 5px;
+}
+
+input[type=file]:focus {
+  outline: 2px dashed black;
+  outline-offset: 2px;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+  padding: 8px 12px;
+  color: black;
+  cursor: pointer;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #A91D3A;
+}
+
+
+
+.hidden {
+  display: none;
+}
+
+#extract-start-page-button,
+#extract-end-page-button {
+    margin-bottom: 10px;
+}
+#extract-form{
+  display: flex;
+  justify-content: space-between;
+}
+#pdf-form{
+  padding-top: 100px;
+}
+
+#pdf-preview {
+  margin-top: 20px;
+  width: 80%;
+  height: 200px; /* Set a fixed height for the container */
+  overflow-x: auto;
+  overflow-y: hidden; /* Hide vertical overflow */
+  border: 4px dashed white;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  
+}
+
+#page-slider {
+  display: flex;
+  height: 90%;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+#end_page, #start_page{
+  background-color: #EEEEEE;
+  border: transparent;
+  box-shadow: 0 0 0 2px  #A91D3A, 8px 8px 0 0  #A91D3A;
+}
+#page-slider canvas {
+  height: 100%; /* Constrain the height of thumbnails */
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 1px solid white; /* Added border for each canvas */
+}
+
+#page-slider canvas:hover {
+  transform: scale(1.1);
+}
+
+
+
+#selected-pages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#selected-pages canvas {
+  width: 45%;
+
+
+}
+
+#remove-file-button{
+  margin-top: 39px;
+}
+.canvas-with-border {
+  border: 4px dashed white;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+
+
+/*-------- custom scroll bar ------------------- */
+
+::-webkit-scrollbar{
+  background-color: #151515;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #A91D3A;
+}
+
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5em; /* Smaller size for smartphones */
+  }
+
+  p {
+    font-size: 0.875em; /* Smaller size for smartphones */
+  }
+
+  .top-bar p{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-row{
+    display: block;
+  }
+  #selected-pages canvas {
+    width: 35%;
+  
+  
+  }
+
+  #extract-form{
+    margin-top: 25px;
+  }
+
+}
